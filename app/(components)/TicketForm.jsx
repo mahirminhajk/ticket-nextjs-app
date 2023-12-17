@@ -12,7 +12,7 @@ const startingTicketData = {
     category: 'Hardware Problem',
 };
 
-function TicketForm() {
+function TicketForm({ ticket }) {
 
     const router = useRouter();
 
