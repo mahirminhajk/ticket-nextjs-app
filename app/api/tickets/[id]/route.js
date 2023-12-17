@@ -23,3 +23,21 @@ export async function DELETE(req, { params }) {
         return NextResponse.json({ message: error.message, error }, { status: 500 });
     }
 }
+
+export async function PUT(req, { params }) {
+    try {
+        const { id } = params;
+
+        const body = await req.json();
+        const ticketData = body.formData;
+
+        const updateTicketData = await Ticket.findByIdAndUpdate(id, {
+            ...ticketData
+        }, { new: true })
+
+
+        return NextResponse.json({ message: "Ticket Updated" }, { status: 200 });
+    } catch (error) {
+        return NextResponse.json({ message: error.message, error }, { status: 500 });
+    }
+}
