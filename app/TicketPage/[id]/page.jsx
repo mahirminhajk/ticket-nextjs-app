@@ -1,6 +1,10 @@
-function TicketPage({ params }) {
+import TicketForm from "@/app/(components)/TicketForm"
+
+function TicketPage({ }) {
     return (
-        <div>TicketPage {params.id}</div>
+        <div>
+            <TicketForm />
+        </div>
     )
 }
 
